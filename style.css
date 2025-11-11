@@ -1,0 +1,368 @@
+/* 기본 스타일 */
+body {
+    font-family: 'Gowun Dodum', sans-serif;
+    background-color: #FDF6E3; /* 베이지색 배경 */
+    color: #3D2B1F;
+    margin: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #8B4513; /* 짙은 갈색 */
+    color: #FFF8DC; /* 옥수수색 */
+    padding: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+nav {
+    background-color: #A0522D; /* 갈색 */
+    padding: 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: #FFFFFF;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #8B4513;
+}
+
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.widget {
+    background-color: #FFF8DC;
+    border: 2px solid #D2B48C; /* 연한 갈색 */
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.widget h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #8B4513;
+    border-bottom: 2px solid #D2B48C;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #3D2B1F;
+    color: #FDF6E3;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+button {
+    background-color: #8B4513;
+    color: white;
+    padding: 0.7rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Gowun Dodum', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #A0522D;
+}
+
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid #D2B48C;
+    border-radius: 5px;
+    font-family: 'Gowun Dodum', sans-serif;
+    margin-top: 0.5rem;
+    box-sizing: border-box; /* 패딩 포함 크기 계산 */
+}
+
+/* 섹션 1: 인포그래픽 */
+.infographic {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.info-box {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 2px solid #8B4513;
+}
+
+.info-box.economy { background-color: #FFF0E1; }
+.info-box.society { background-color: #E1FFF0; }
+
+.info-box h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.info-box ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.info-box > ul > li {
+    margin-bottom: 1rem;
+}
+.info-box > ul > li > strong {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.info-box ul ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 0.95rem;
+}
+
+.arrow {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #D2691E;
+    transform: rotate(90deg); /* 모바일에서 세로로 */
+}
+
+.conclusion {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 1rem;
+    background-color: #FFFFE0;
+    border: 2px dashed #8B4513;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+/* 미디어 쿼리 (태블릿/데스크탑) */
+@media (min-width: 768px) {
+    .infographic {
+        flex-direction: row;
+        align-items: stretch; /* 높이 맞춤 */
+    }
+    .info-box {
+        width: 45%;
+    }
+    .arrow {
+        transform: rotate(0deg); /* 가로로 */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+}
+
+/* 섹션 2: 방탈출 퀴즈 */
+#storyboard {
+    background-color: #FFF0E1;
+    border: 1px solid #D2B48C;
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.quiz-mission {
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border: 1px solid #E0E0E0;
+    display: none; /* JS로 하나씩 보이게 함 */
+}
+.quiz-mission.active {
+    display: block;
+}
+
+.quiz-mission h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #A0522D;
+}
+.quiz-mission p {
+    margin: 0.5rem 0;
+}
+.quiz-mission input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid #D2B48C;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.quiz-mission button {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+.quiz-feedback {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+.quiz-feedback.correct { color: green; }
+.quiz-feedback.incorrect { color: red; }
+
+/* 객관식 퀴즈 */
+.objective-quiz-box {
+    background-color: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+.objective-quiz-box h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #8B4513;
+}
+.objective-question {
+    margin-top: 1rem;
+}
+.objective-question p {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.objective-question label {
+    display: block;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+#quiz-submit-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    background-color: #2E8B57; /* 초록색 */
+}
+#quiz-submit-btn:hover {
+    background-color: #228B22;
+}
+#quiz-result {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+/* 섹션 3: 역사 토론방 */
+.discussion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.discussion-box {
+    background-color: #FFFFFF;
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid #E0E0E0;
+}
+.discussion-box h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #A0522D;
+}
+#opinion-board {
+    margin-top: 1.5rem;
+    background-color: #FFFFFF;
+    min-height: 100px;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px dashed #D2B48C;
+}
+.opinion-item {
+    border-bottom: 1px solid #EEE;
+    padding: 0.8rem 0.5rem;
+}
+.opinion-item:last-child {
+    border-bottom: none;
+}
+.opinion-item strong {
+    color: #A0522D;
+}
+
+@media (min-width: 768px) {
+    .discussion-container {
+        flex-direction: row;
+    }
+    .discussion-box {
+        width: 50%;
+    }
+}
+
+/* 섹션 4: 시대별 탐구 */
+.timeline-container h3,
+.bio-container h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #A0522D;
+    margin-bottom: 1rem;
+}
+
+.timeline {
+    list-style-type: none;
+    padding-left: 0;
+    position: relative;
+    border-left: 3px solid #D2B48C;
+    margin-left: 10px;
+}
+.timeline li {
+    padding-left: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+.timeline li::before {
+    content: '⏳';
+    position: absolute;
+    left: -14px; /* (아이콘너비/2) - (테두리두께/2) */
+    top: 0;
+    font-size: 1.5rem;
+    background-color: #FDF6E3;
+}
+.timeline li strong {
+    font-weight: bold;
+    color: #8B4513;
+}
+
+.bio-container {
+    margin-top: 2rem;
+}
+.bio-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+.bio-card h4 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #8B4513;
+}
